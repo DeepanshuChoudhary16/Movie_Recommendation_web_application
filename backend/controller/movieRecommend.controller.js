@@ -33,15 +33,7 @@ export const getRecommendations = async (req, res) => {
       if (err.status === 429) {
  if (err.status === 429) {
     return res.status(429).json({
-      recommendations: [
-        "Interstellar",
-        "Inception",
-        "The Dark Knight",
-        "Arrival",
-        "Blade Runner 2049"
-      ],
-      error: "Daily free Gemini limit reached. Showing recommended movies instead.",
-      note: "Try again tomorrow for live AI-generated results."
+      error: "Daily free Gemini limit reached.",
     });
   }
 
