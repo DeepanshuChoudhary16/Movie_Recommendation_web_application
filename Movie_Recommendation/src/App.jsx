@@ -17,7 +17,7 @@ function App() {
 
     try {
       const res = await axios.post(
-        "https://movie-recommendation-web-application-1.onrender.com",
+        "https://movie-recommendation-web-application-1.onrender.com/",
         { preference },
         { headers: { "Content-Type": "application/json" } }
       );
