@@ -36,6 +36,7 @@ CORS + dotenv
 Render Deployment
 
 🗂 Project Structure
+``bash
 movie-recommendation/
  ├── backend/
  │   ├── controller/
@@ -48,6 +49,7 @@ movie-recommendation/
      ├── src/
      ├── public/
      └── vite.config.js
+     ``
 
 ⚙️ Install & Run Locally
 🧠 1. Clone Repository
@@ -55,27 +57,35 @@ git clone https://github.com/YOUR_USERNAME/Movie_Recommendation_web_application.
 cd Movie_Recommendation_web_application
 
 🛠 Backend Setup
+``bash
 cd backend
 npm install
-
+``
 Create .env file in /backend:
+``bash
 GEMINI_API_KEY=your_key_here
 MONGO_URI=your_mongodb_connection_string
 CORS_ORIGIN=http://localhost:5173
 PORT=3000
+``
 
 Run backend
+``bash
 npm run dev
+``
 
 
 API now runs on:
-
+``bash
 http://localhost:3000
+``
 
 🎨 Frontend Setup
+``bash
 cd ../Movie_Recommendation
 npm install
 npm run dev
+``
 
 
 Open browser:
