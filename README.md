@@ -36,7 +36,7 @@ CORS + dotenv
 Render Deployment
 
 🗂 Project Structure
-``bash
+``arduino
 movie-recommendation/
  ├── backend/
  │   ├── controller/
