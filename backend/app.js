@@ -1,32 +1,31 @@
 import express from "express";
 import cors from "cors";
+
+
 const app = express();
+
+const allowedOrigins = process.env.CORS_ORIGIN;
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN?.split(",") || "http://localhost:5173",
+    origin: allowedOrigins,
     credentials: true,
-    methods: ["POST", "GET", "DELETE", "PUT", "PATCH", "OPTIONS"],
-    allowedHeaders: ["Authorization", "Content-Type"],
-  }),
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
 );
 
 
 
-app.use(express.json({ limit: "16kb" }));
-app.use(express.urlencoded({ extended: true, limit: "16kb" }));
-app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-
-import recommendRouter from "./routes/movieRecommend.routes.js";
-
-app.use("/api",recommendRouter)
+import recommendRoutes from "./routes/movieRecommend.routes.js";
+// Mount your routes here ⬇⬇⬇⬇⬇
+app.use("/api", recommendRoutes);
 
 app.get("/", (req, res) => {
   res.send("hello world");
-});
-app.get("/api/test", (req, res) => {
-  res.json({ ok: true });
 });
 
 export default app;
