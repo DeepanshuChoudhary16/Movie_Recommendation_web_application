@@ -17,7 +17,7 @@ function App() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/recommend",
+        "https://movie-recommendation-web-application-ufce.onrender.com/api/recommend",
         { preference },
         { headers: { "Content-Type": "application/json" } }
       );
