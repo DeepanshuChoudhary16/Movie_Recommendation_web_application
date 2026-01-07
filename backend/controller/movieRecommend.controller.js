@@ -30,6 +30,18 @@ export const getRecommendations = async (req, res) => {
           error: "AI is currently busy. Please try again in a few seconds 🙏",
         });
       }
+      if (err.status === 429) {
+  return res.status(200).json({
+    recommendations: [
+      "Interstellar",
+      "Inception",
+      "The Dark Knight",
+      "Arrival",
+      "Blade Runner 2049"
+    ],
+    note: "AI limit reached - showing fallback suggestions."
+  });
+}
       throw err;
     }
 
